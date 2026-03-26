@@ -51,7 +51,7 @@ Build and flash the firmware using Visual Studio Code with the Pico extension in
 
 The firmware was flashed using a [Raspberry Pi Debug Probe](https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html). 
 
-[UF2 binary file](bin/pico2_8ball_ver01.uf2)
+[UF2 binary file](https://github.com/lds133/pico_8ball/raw/refs/heads/main/bin/pico2_8ball_ver01.uf2)
 
 
 
