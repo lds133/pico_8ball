@@ -2,7 +2,7 @@
 
 Customizable prophecy hardware platform based on the Magic 8 Ball toy with shake detection, screen animation, and prophecy rendering, is recommended here. 
 
-<img src="img/leave_me_alone.jpg" alt="magic8ball" width="300"/>
+<img src="img/8ball.gif" alt="magic8ball" width="300"/>
 
 ## Hardware 
 
