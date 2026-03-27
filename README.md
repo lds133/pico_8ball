@@ -1,12 +1,12 @@
 # Magic 8 Ball toy
 
-I would like to share a small DIY project that resulted from my desire to utilize a 1.25" round display and play around with Raspberry Pi Pico boards. Using the accelerometer allows the device to detect its orientation, recognize gestures such as shaking and rotating, and detect when it is idle. This makes it possible to emulate the floating behavior of the 12x dice. The dice image is visualized on the round screen, which surprisingly fits the window of the 8-ball toy perfectly. The device controls the battery voltage and changes the triangle color from blue to red as the battery drains.
+I would like to share a small DIY project that resulted from my desire to utilize a 1.25" round display and play around with Raspberry Pi Pico boards. Using the accelerometer allows the device to detect its orientation, recognize gestures such as shaking and rotating, and detect when it is idle. This makes it possible to emulate the floating behavior of the 20x dice. The dice image is visualized on the round screen, which surprisingly fits the window of the 8-ball toy perfectly. The device controls the battery voltage and changes the triangle color from blue to red as the battery drains.
 
 <img src="img/hardware_3.jpg" alt="8 ball toy" width="300"/>
 <img src="img/hardware_4.jpg" alt="8 ball toy" width="300"/>
 <img src="img/leave_me_alone.jpg" alt="8 ball toy" width="300"/>
 
-The device waits to be rotated face down and shaken. Then, when faced up, it randomly regenerates the prophecy on the dice side from a hardcoded list. When not in use, the device goes to sleep to save battery.
+The device waits to be rotated face down and shaken. Then, when faced up, it randomly generates the prophecy on the dice side from a hardcoded list. When not in use, the device goes to sleep to save battery.
 
 
 <img src="img/8ball.gif" alt="magic8ball" width="300"/>
