@@ -4,7 +4,7 @@ I would like to share a small DIY project that resulted from my desire to utiliz
 
 <img src="img/hardware_3.jpg" alt="8 ball toy" width="300"/>
 <img src="img/hardware_4.jpg" alt="8 ball toy" width="300"/>
-<img src="img/hardware_5.jpg" alt="8 ball toy" width="300"/>
+<img src="img/leave_me_alone.jpg" alt="8 ball toy" width="300"/>
 
 The device waits to be rotated face down and shaken. Then, when faced up, it randomly regenerates the prophecy on the dice side from a hardcoded list. When not in use, the device goes to sleep to save battery.
 
@@ -26,7 +26,7 @@ The device waits to be rotated face down and shaken. Then, when faced up, it ran
 
 Here is a diagram of how to wire the components.
 
-<img src="img/wire.png" alt="wiring" width="600"/>
+<img src="img/wire1.png" alt="wiring" width="600"/>
 
 ### Case
 
