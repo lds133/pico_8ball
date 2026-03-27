@@ -1,70 +1,50 @@
 # Magic 8 Ball toy
 
-Customizable prophecy hardware platform based on the Magic 8 Ball toy with shake detection, screen animation, and prophecy rendering, is recommended here. 
+I would like to share a small DIY project that resulted from my desire to utilize a 1.25" round display and play around with Raspberry Pi Pico boards. Using the accelerometer allows the device to detect its orientation, recognize gestures such as shaking and rotating, and detect when it is idle. This makes it possible to emulate the floating behavior of the 12x dice. The dice image is visualized on the round screen, which surprisingly fits the window of the 8-ball toy perfectly. The device controls the battery voltage and changes the triangle color from blue to red as the battery drains.
+
+<img src="img/hardware_3.jpg" alt="8 ball toy" width="300"/>
+<img src="img/hardware_4.jpg" alt="8 ball toy" width="300"/>
+<img src="img/hardware_5.jpg" alt="8 ball toy" width="300"/>
+
+The device waits to be rotated face down and shaken. Then, when faced up, it randomly regenerates the prophecy on the dice side from a hardcoded list. When not in use, the device goes to sleep to save battery.
+
 
 <img src="img/8ball.gif" alt="magic8ball" width="300"/>
 
 ## Hardware 
 
 1. [RP2350 board](https://www.raspberrypi.com/products/raspberry-pi-pico-2/)
-1. [1.28 inch LCD module](https://www.waveshare.com/wiki/1.28inch_LCD_Module)
-1. [MPU-9250 accel and gyro module](https://cdn.sparkfun.com/assets/learn_tutorials/5/5/0/MPU-9250-Register-Map.pdf) 
-1. Li-ion battery charger board TP4056
-1. Li-ion battery
+2. [1.28 inch LCD module](https://www.waveshare.com/wiki/1.28inch_LCD_Module)
+3. [MPU-9250 accel and gyro module](https://cdn.sparkfun.com/assets/learn_tutorials/5/5/0/MPU-9250-Register-Map.pdf) 
+4. Li-ion battery charger board TP4056
+5. Li-ion battery
 
+<img src="img/hardware_6.jpg" alt="hardware" width="300"/>
 
-<img src="img/hardware_1.jpg" alt="wiring" width="300"/>
 
 ### Wiring
 
-Follow the diagram below to correctly connect all hardware components.
+Here is a diagram of how to wire the components.
 
 <img src="img/wire.png" alt="wiring" width="600"/>
 
 ### Case
 
-Repurposed shell from a broken Magic 8 Ball toy, used as the enclosure for the device.
+The liquid in the 8-Ball toy was drained long ago, so it was disassembled and all of its components were removed, except for the shell.
 
 <img src="img/disassemble_1.jpg" alt="broken 8 ball toy" width="300"/>
 
 <img src="img/disassemble_2.jpg" alt="broken 8 ball toy" width="300"/>
 
-<img src="img/facedown.jpg" alt="broken 8 ball toy" width="300"/>
-
-
 ## Firmware
 
-The firmware handles all core device functionality, including:
-
-1. Reading motion data from the MPU-9250 sensor
-1. Detecting shake gestures using configurable acceleration thresholds
-1. Generating pseudo-random prophecies
-1. Rendering text and basic graphics on the LCD display
-1. Monitoring battery voltage levels and status indicators
-
+The firmware utilizes both Pico cores: one processes the accelerometer data, and the other visualizes the floating dice. It was initially developed for the RP2040 platform, so adjustments may be necessary for optimal performance on the RP2350.
 
 ### Development
 
-Build and flash the firmware using Visual Studio Code with the Pico extension installed.
-
-### Flashing
-
-The firmware was flashed using a [Raspberry Pi Debug Probe](https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html). 
-
-[UF2 binary file](https://github.com/lds133/pico_8ball/raw/refs/heads/main/bin/pico2_8ball_ver01.uf2)
+Visual Studio Code with the Pico extension was used for development, and the [Raspberry Pi Debug Probe](https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html) served as the debugger. A [UF2 file](https://github.com/lds133/pico_8ball/raw/refs/heads/main/bin/pico2_8ball_ver01.uf2) is provided for quick testing.
 
 
 
-## Using instructions
-
-1. **Invert and activate** Hold the device with the viewing window facing downward. Gently shake to initialize the response mechanism.
-2. **Submit your query**  Clearly speak your question aloud while holding the device steady.
-3. **Reveal the outcome** Rotate the device so the viewing window faces upward. Observe the displayed prophecy.
 
 
-## Notes
-
-- **Shake thoroughly for accurate results** The prophecy is generated using accelerometer input-insufficient movement may affect outcome quality.
-- **Hardware compatibility** The codebase was originally developed for the RP2040 platform and may require adjustments for optimal performance on RP2350.
-- **Optional guidance** Prophecies are provided for entertainment purposes only; adherence is not required.
-- **Low battery indicator** A red triangle signifies that the battery level is low.
